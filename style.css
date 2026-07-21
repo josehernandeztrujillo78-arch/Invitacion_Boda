@@ -208,7 +208,7 @@ img {
 
 
 
-/* Fallback si el video no carga */
+
 
 
 .hero-content {
@@ -275,27 +275,43 @@ img {
 .scroll-hint {
   position: absolute;
   bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
+
   font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.9;
+
   color: var(--white);
   text-decoration: none;
-  animation: float 2s ease-in-out infinite;
+  opacity: 0.9;
+
+  transition: opacity 0.3s ease;
+}
+
+.scroll-hint:hover {
+  opacity: 1;
 }
 
 .scroll-hint svg {
   width: 20px;
   height: 20px;
+  animation: float 2s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(8px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 /* ============================================
@@ -960,12 +976,3 @@ footer .footer-date {
     font-size: 22px;
     color: #b08d57;
   }
-
-  .hero-video::-webkit-media-controls {
-    display: none !important;
-}
-
-.hero-video::-webkit-media-controls-start-playback-button {
-    display: none !important;
-    -webkit-appearance: none;
-}
