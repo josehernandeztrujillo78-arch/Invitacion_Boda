@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Karina & Gerardo · Invitación de Boda</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+
+--cream:#f7f2ea;
+--ink:#3a3a34;
+--gold:#b08d57;
+--rose:#b76e79;
+
+--serif:"Cormorant Garamond",serif;
+--sans:"Jost",sans-serif;
+
+}
+
+
+*,
+*::before,
+*::after{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+
+body{
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+font-family:var(--sans);
+
+background:
+linear-gradient(
+rgba(247,242,234,.75),
+rgba(239,230,216,.85)
+),
+url("img/portad2.webp");
+
+background-size:cover;
+background-position:center;
+
+position:relative;
+
+}
+
+
+/* Luz ambiental */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+height:600px;
+
+background:
+radial-gradient(
+circle,
+rgba(176,141,87,.30),
+transparent 70%
+);
+
+animation:luz 10s infinite alternate;
+
+}
+
+
+@keyframes luz{
+
+from{
+transform:translate(-120px,-80px);
+}
+
+to{
+transform:translate(120px,100px);
+}
+
+}
+
+
+
+/* Partículas */
+
+.particula{
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+background:var(--gold);
+
+transform:rotate(-45deg);
+
+opacity:.5;
+
+animation:flotar 7s linear infinite;
+
+}
+
+
+.particula::before,
+.particula::after{
+
+content:"";
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+background:var(--gold);
+
+border-radius:50%;
+
+}
+
+
+.particula::before{
+
+top:-5px;
+left:0;
+
+}
+
+
+.particula::after{
+
+left:5px;
+top:0;
+
+}
+
+
+
+@keyframes flotar{
+
+from{
+
+transform:
+translateY(100vh)
+rotate(-45deg);
+
+opacity:.6;
+
+}
+
+
+to{
+
+transform:
+translateY(-20vh)
+rotate(-45deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+/* Sobre principal */
+
+.sobre{
+
+width:100%;
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+}
+
+
+/* Tarjeta */
+
+.contenido{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+background:rgba(255,253,249,.80);
+
+padding:55px 45px;
+
+border-radius:25px;
+
+box-shadow:
+0 20px 45px rgba(58,45,20,.18);
+
+animation:aparecer 1.5s ease;
+
+}
+
+
+
+/* Corazón */
+
+.corazon{
+
+font-size:55px;
+
+color:var(--rose);
+
+margin-bottom:15px;
+
+
+}
+
+
+
+/* Nombres */
+
+.titulo{
+
+font-family:var(--serif);
+
+font-size:65px;
+
+font-weight:400;
+
+line-height:.95;
+
+letter-spacing:3px;
+
+color:#b08d57;
+
+margin-bottom:25px;
+
+}
+
+
+
+/* Texto */
+
+.texto{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#665555;
+
+margin-bottom:35px;
+
+}
+
+
+
+/* Botón */
+
+.boton{
+
+display:inline-block;
+
+padding:15px 40px;
+
+background:var(--rose);
+
+color:white;
+
+text-decoration:none;
+
+border-radius:50px;
+
+letter-spacing:2px;
+
+font-size:15px;
+
+transition:.3s;
+
+box-shadow:
+0 8px 20px rgba(183,110,121,.35);
+
+}
+
+
+.boton:hover{
+
+background:#565c44;;
+
+transform:translateY(-3px);
+
+}
+
+
+
+/* Sello */
+
+.sello{
+
+position:absolute;
+
+right:40px;
+bottom:30px;
+
+width:70px;
+height:70px;
+
+background:var(--rose);
+
+color:white;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:35px;
+
+z-index:2;
+
+}
+
+
+/* Entrada */
+
+@keyframes aparecer{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/* Celular */
+
+@media(max-width:600px){
+
+.contenido{
+
+padding:35px 25px;
+
+margin:20px;
+
+}
+
+
+.titulo{
+
+font-size:42px;
+
+}
+
+
+.texto{
+
+font-size:17px;
+
+}
+
+
+.sello{
+
+width:55px;
+height:55px;
+
+font-size:25px;
+
+right:20px;
+bottom:20px;
+
+}
+
+}
+
+
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation:none!important;
+
+transition:none!important;
+
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="particula" style="left:10%;animation-delay:1s"></div>
+<div class="particula" style="left:30%;animation-delay:4s"></div>
+<div class="particula" style="left:70%;animation-delay:2s"></div>
+<div class="particula" style="left:85%;animation-delay:6s"></div>
+
+
+
+<section class="sobre">
+
+
+<div class="contenido">
+
+
+<div class="corazon">♡</div>
+
+
+<h1 class="titulo">
+
+Karina
+<br>
+&
+<br>
+Gerardo
+
+</h1>
+
+
+<p class="texto">
+
+Tenemos el honor de invitarte<br>
+a celebrar juntos<br>
+el comienzo de nuestra historia de amor
+
+</p>
+
+
+<a href="index.html" class="boton">
+
+ABRIR INVITACIÓN
+
+</a>
+
+
+</div>
+
+
+<div class="sello">
+
+♥
+
+</div>
+
+
+</section>
+
+
+</body>
+
+</html>
