@@ -16,15 +16,15 @@
 
 <style>
 
-:root {
+:root{
 
---cream:#f7f2ea;
---ink:#3a3a34;
---gold:#b08d57;
---rose:#b76e79;
+    --cream:#f7f2ea;
+    --ink:#3a3a34;
+    --rose:#c08b86;
+    --gold:#b08d57;
 
---serif:"Cormorant Garamond",serif;
---sans:"Jost",sans-serif;
+    --serif:"Cormorant Garamond", serif;
+    --sans:"Jost", sans-serif;
 
 }
 
@@ -33,383 +33,493 @@
 *::before,
 *::after{
 
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 
 }
 
 
 body{
 
-min-height:100vh;
+    min-height:100vh;
 
-display:flex;
-justify-content:center;
-align-items:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-overflow:hidden;
+    overflow:hidden;
 
-font-family:var(--sans);
+    font-family:var(--sans);
 
-background:
-linear-gradient(
-rgba(247,242,234,.75),
-rgba(239,230,216,.85)
-),
-url("img/portad2.webp");
+    background:
+    linear-gradient(
+        rgba(247,242,234,.75),
+        rgba(239,230,216,.85)
+    ),
+    url("img/portad2.webp");
 
-background-size:cover;
-background-position:center;
+    background-size:cover;
+    background-position:center;
 
-position:relative;
+    position:relative;
 
 }
+
 
 
 /* Luz ambiental */
 
 body::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-width:600px;
-height:600px;
+    width:600px;
+    height:600px;
 
-background:
-radial-gradient(
-circle,
-rgba(176,141,87,.30),
-transparent 70%
-);
+    background:
+    radial-gradient(
+        circle,
+        rgba(176,141,87,.30),
+        transparent 70%
+    );
 
-animation:luz 10s infinite alternate;
+    animation:luz 10s infinite alternate;
 
 }
+
 
 
 @keyframes luz{
 
-from{
-transform:translate(-120px,-80px);
-}
+    from{
+        transform:translate(-120px,-80px);
+    }
 
-to{
-transform:translate(120px,100px);
-}
-
-}
-
-
-
-/* Partículas */
-
-.particula{
-
-position:absolute;
-
-width:10px;
-height:10px;
-
-background:var(--gold);
-
-transform:rotate(-45deg);
-
-opacity:.5;
-
-animation:flotar 7s linear infinite;
-
-}
-
-
-.particula::before,
-.particula::after{
-
-content:"";
-
-position:absolute;
-
-width:10px;
-height:10px;
-
-background:var(--gold);
-
-border-radius:50%;
-
-}
-
-
-.particula::before{
-
-top:-5px;
-left:0;
-
-}
-
-
-.particula::after{
-
-left:5px;
-top:0;
+    to{
+        transform:translate(120px,100px);
+    }
 
 }
 
 
 
-@keyframes flotar{
-
-from{
-
-transform:
-translateY(100vh)
-rotate(-45deg);
-
-opacity:.6;
-
-}
-
-
-to{
-
-transform:
-translateY(-20vh)
-rotate(-45deg);
-
-opacity:0;
-
-}
-
-}
-
-
-
-/* Sobre principal */
+/* SOBRE PRINCIPAL */
 
 .sobre{
 
-width:100%;
-height:100vh;
+    width:100%;
+    height:100vh;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
-align-items:center;
+    justify-content:center;
+    align-items:center;
 
-position:relative;
+    position:relative;
 
 }
 
 
-/* Tarjeta */
+
+/* TARJETA */
 
 .contenido{
 
-position:relative;
+    position:relative;
 
-z-index:2;
+    z-index:2;
 
-text-align:center;
+    text-align:center;
 
-background:rgba(255,253,249,.80);
+    background:rgba(255,253,249,.85);
 
-padding:55px 45px;
+    padding:55px 45px;
 
-border-radius:25px;
+    border-radius:25px;
 
-box-shadow:
-0 20px 45px rgba(58,45,20,.18);
+    box-shadow:
+    0 20px 45px rgba(58,45,20,.18);
 
-animation:aparecer 1.5s ease;
+
+    opacity:0;
+
+    animation:
+    mostrarContenido 1.5s ease 3.5s forwards;
 
 }
 
 
 
-/* Corazón */
+/* CORAZON */
 
 .corazon{
 
-font-size:55px;
+    font-size:55px;
 
-color:var(--rose);
+    color:var(--rose);
 
-margin-bottom:15px;
-
+    margin-bottom:15px;
 
 }
 
 
 
-/* Nombres */
+/* NOMBRES */
 
 .titulo{
 
-font-family:var(--serif);
+    font-family:var(--serif);
 
-font-size:65px;
+    font-size:65px;
 
-font-weight:400;
+    font-weight:400;
 
-line-height:.95;
+    line-height:.95;
 
-letter-spacing:3px;
+    letter-spacing:3px;
 
-color:#b08d57;
+    color:var(--gold);
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
 
 
-/* Texto */
+/* TEXTO */
 
 .texto{
 
-font-size:20px;
+    font-size:20px;
 
-line-height:1.8;
+    line-height:1.8;
 
-color:#665555;
+    color:#665555;
 
-margin-bottom:35px;
+    margin-bottom:35px;
 
 }
 
 
 
-/* Botón */
+/* BOTON */
 
 .boton{
 
-display:inline-block;
+    display:inline-block;
 
-padding:15px 40px;
+    padding:15px 40px;
 
-background:var(--rose);
+    background:var(--rose);
 
-color:white;
+    color:white;
 
-text-decoration:none;
+    text-decoration:none;
 
-border-radius:50px;
+    border-radius:50px;
 
-letter-spacing:2px;
+    letter-spacing:2px;
 
-font-size:15px;
+    font-size:15px;
 
-transition:.3s;
+    transition:.3s;
 
-box-shadow:
-0 8px 20px rgba(183,110,121,.35);
+    box-shadow:
+    0 8px 20px rgba(183,110,121,.35);
 
 }
+
 
 
 .boton:hover{
 
-background:#565c44;;
+    background:#565c44;
 
-transform:translateY(-3px);
+    transform:translateY(-3px);
 
 }
 
 
 
-/* Sello */
+/* SELLO */
 
 .sello{
 
-position:absolute;
+    position:absolute;
 
-right:40px;
-bottom:30px;
+    right:40px;
+    bottom:30px;
 
-width:70px;
-height:70px;
+    width:70px;
+    height:70px;
 
-background:var(--rose);
+    background:var(--rose);
 
-color:white;
+    color:white;
 
-border-radius:50%;
+    border-radius:50%;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
-align-items:center;
+    justify-content:center;
+    align-items:center;
 
-font-size:35px;
+    font-size:35px;
 
-z-index:2;
-
-}
-
-
-/* Entrada */
-
-@keyframes aparecer{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
+    z-index:2;
 
 }
 
 
 
-/* Celular */
+/* ANIMACION DEL SOBRE */
+
+.sobre-animacion{
+
+    position:fixed;
+
+    width:320px;
+    height:220px;
+
+    background:#f8eee2;
+
+    border-radius:10px;
+
+    z-index:20;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.25);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    animation:
+    ocultarSobre 1s ease 3.5s forwards;
+
+}
+
+
+
+/* TAPA */
+
+.tapa{
+
+    position:absolute;
+
+    top:0;
+
+    width:0;
+    height:0;
+
+    border-left:160px solid transparent;
+    border-right:160px solid transparent;
+    border-top:120px solid #d9b88f;
+
+    transform-origin:top;
+
+    animation:
+    abrirTapa 2s ease forwards;
+
+}
+
+
+
+/* CARTA */
+
+.papel{
+
+    width:85%;
+    height:80%;
+
+    background:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:var(--serif);
+
+    color:var(--gold);
+
+    border-radius:5px;
+
+    transform:translateY(70px);
+
+    opacity:0;
+
+    animation:
+    salirCarta 1.5s ease 1.2s forwards;
+
+}
+
+
+
+.papel span{
+
+    font-size:35px;
+
+    color:var(--rose);
+
+}
+
+
+
+.papel h2{
+
+    font-size:35px;
+
+    text-align:center;
+
+    line-height:.8;
+
+}
+
+
+
+
+@keyframes abrirTapa{
+
+    from{
+        transform:rotateX(0deg);
+    }
+
+    to{
+        transform:rotateX(180deg);
+    }
+
+}
+
+
+
+@keyframes salirCarta{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(70px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(-20px);
+
+    }
+
+}
+
+
+
+@keyframes ocultarSobre{
+
+    to{
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+
+@keyframes mostrarContenido{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+/* RESPONSIVE */
 
 @media(max-width:600px){
 
-.contenido{
 
-padding:35px 25px;
+    .contenido{
 
-margin:20px;
+        padding:35px 25px;
 
-}
+        margin:20px;
 
-
-.titulo{
-
-font-size:42px;
-
-}
+    }
 
 
-.texto{
+    .titulo{
 
-font-size:17px;
+        font-size:42px;
 
-}
+    }
 
 
-.sello{
+    .texto{
 
-width:55px;
-height:55px;
+        font-size:17px;
 
-font-size:25px;
+    }
 
-right:20px;
-bottom:20px;
 
-}
+    .sello{
+
+        width:55px;
+        height:55px;
+
+        font-size:25px;
+
+        right:20px;
+        bottom:20px;
+
+    }
+
+
+    .sobre-animacion{
+
+        width:260px;
+        height:180px;
+
+    }
+
+
+    .tapa{
+
+        border-left-width:130px;
+        border-right-width:130px;
+        border-top-width:100px;
+
+    }
 
 }
 
@@ -417,16 +527,154 @@ bottom:20px;
 
 @media(prefers-reduced-motion:reduce){
 
-*{
+    *{
 
-animation:none!important;
+        animation:none!important;
 
-transition:none!important;
+        transition:none!important;
+
+    }
+
+}
+/* CORAZONES FLOTANTES */
+
+.corazones{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
 
 }
 
+
+
+.corazones span{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:rgba(192,139,134,.55);
+
+    font-size:35px;
+
+    animation:
+    flotar 12s linear infinite;
+
 }
 
+
+
+/* posiciones y velocidades */
+
+.corazones span:nth-child(1){
+
+    left:10%;
+
+    animation-duration:10s;
+
+}
+
+
+.corazones span:nth-child(2){
+
+    left:25%;
+
+    font-size:50px;
+
+    animation-duration:14s;
+
+}
+
+
+
+.corazones span:nth-child(3){
+
+    left:45%;
+
+    animation-duration:11s;
+
+}
+
+
+
+.corazones span:nth-child(4){
+
+    left:65%;
+
+    font-size:45px;
+
+    animation-duration:15s;
+
+}
+
+
+
+.corazones span:nth-child(5){
+
+    left:80%;
+
+    animation-duration:12s;
+
+}
+
+
+
+.corazones span:nth-child(6){
+
+    left:90%;
+
+    font-size:55px;
+
+    animation-duration:16s;
+
+}
+
+
+
+
+@keyframes flotar{
+
+
+0%{
+
+    transform:
+    translateY(0)
+    rotate(0deg);
+
+    opacity:0;
+
+}
+
+
+
+20%{
+
+    opacity:1;
+
+}
+
+
+
+100%{
+
+    transform:
+    translateY(-110vh)
+    rotate(360deg);
+
+    opacity:0;
+
+}
+
+
+}
 
 </style>
 
@@ -436,12 +684,36 @@ transition:none!important;
 <body>
 
 
-<div class="particula" style="left:10%;animation-delay:1s"></div>
-<div class="particula" style="left:30%;animation-delay:4s"></div>
-<div class="particula" style="left:70%;animation-delay:2s"></div>
-<div class="particula" style="left:85%;animation-delay:6s"></div>
+<div class="sobre-animacion">
 
+    <div class="tapa"></div>
 
+    <div class="papel">
+
+        <span>♡</span>
+
+        <h2>
+            Karina
+            <br>
+            &
+            <br>
+            Gerardo
+        </h2>
+
+    </div>
+
+</div>
+
+<div class="corazones">
+
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+
+</div>
 
 <section class="sobre">
 
@@ -449,7 +721,9 @@ transition:none!important;
 <div class="contenido">
 
 
-<div class="corazon">♡</div>
+<div class="corazon">
+♡
+</div>
 
 
 <h1 class="titulo">
@@ -463,13 +737,17 @@ Gerardo
 </h1>
 
 
+
 <p class="texto">
 
-Tenemos el honor de invitarte<br>
-a celebrar juntos<br>
+Tenemos el honor de invitarte
+<br>
+a celebrar juntos
+<br>
 el comienzo de nuestra historia de amor
 
 </p>
+
 
 
 <a href="bienvenida.html" class="boton">
@@ -479,7 +757,9 @@ ABRIR INVITACIÓN
 </a>
 
 
+
 </div>
+
 
 
 <div class="sello">

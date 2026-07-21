@@ -25,6 +25,7 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -181,19 +182,19 @@
         <ul class="gift-list" id="giftList" hidden>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-            <span>Juego de sartenes y ollas</span>
+            <span>Juego de sartenes u ollas</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5M4 9v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9M9 13h6"/></svg>
-            <span>Vajilla completa para 12</span>
+            <span>Vajilla</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v6a6 6 0 0 0 12 0V2M6 2h12M8 22h8M12 14v8"/></svg>
-            <span>Set de copas de cristal</span>
+            <span>Juego de vasos o copas de vino</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3zM3 7l3-4h12l3 4M12 11v5M9 13h6"/></svg>
-            <span>Juego de sábanas y edredón</span>
+            <span>Juego de sábanas o edredón</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-8-4.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-8 11-8 11z"/></svg>
@@ -201,12 +202,12 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v6H4zM4 14h16v6H4zM8 7h.01M8 17h.01"/></svg>
-            <span>Cafetera y electrodomésticos</span>
+            <span>Muebles o electrodomésticos</span>
           </li>
         </ul>
 
         <div class="detail-card bank-card">
-          <h3>Cuenta Bancaria</h3>
+          <h3>Aportación Cuenta Bancaria</h3>
           <p>Banco BBVA</p>
           <p class="clabe">
             CLABE: <span id="clabe">012345678901234567</span>
@@ -217,48 +218,103 @@
     </section>
 
     <!-- Detalles -->
-    <section class="block details" id="detalles" aria-labelledby="detalles-title">
-      <div class="container">
-        <h2 class="section-title" id="detalles-title" data-aos="fade-up" data-eyebrow="Información">Detalles</h2>
-        <p class="section-sub" data-aos="fade-up">Toda la información para que no te pierdas nada.</p>
+    <!-- Detalles -->
+<section class="block details" id="detalles" aria-labelledby="detalles-title">
+  <div class="container">
+    <h2 class="section-title" id="detalles-title" data-aos="fade-up" data-eyebrow="Información">Detalles</h2>
+    <p class="section-sub" data-aos="fade-up">Toda la información para que no te pierdas nada.</p>
 
-        <div class="detail-grid">
-          <div class="detail-card" data-aos="fade-up">
-            <h3>Ubicación</h3>
-            <p>Finca Los Olivos<br />Camino del Prado 24<br />Valencia, España</p>
-          </div>
+    <div class="detail-grid">
 
-          <div class="detail-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Etiqueta</h3>
-            <p>Formal / Elegante<br />Se recomienda calzado cómodo para bailar</p>
-          </div>
+      <div class="detail-card" data-aos="fade-up">
+        <div class="detail-icon">
+          <i class="fa-solid fa-location-dot icon-ubicacion"></i>
         </div>
+        <h3>Ubicación</h3>
+        <p>
+          Finca Los Olivos<br />
+          Camino del Prado 24<br />
+          Valencia, España
+        </p>
       </div>
-    </section>
+<div class="detail-card" data-aos="fade-up" data-aos-delay="100">
+  <div class="detail-icon">
+    <i class="fa-solid fa-user-tie icon-hombre"></i>
+    <i class="fa-solid fa-person-dress icon-mujer"></i>
+  </div>
+
+  <h3>Etiqueta</h3>
+  <p>
+    Formal / Elegante<br />
+    Se recomienda calzado cómodo para bailar
+  </p>
+</div>
+    </div>
+  </div>
+</section>
 
     <!-- Mapa -->
-    <section class="block" id="mapa" aria-labelledby="mapa-title">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title" id="mapa-title" data-eyebrow="Ubicación">Cómo llegar</h2>
-        <p class="section-sub">Te esperamos en un rincón rodeado de olivos, ideal para celebrar.</p>
-        <div class="map-card">
-          <span class="pin" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          </span>
-          <p class="place">Finca Los Olivos</p>
-          <p class="addr">Camino del Prado 24<br />Valencia, España</p>
-          <a
-            class="btn"
-            href="https://www.google.com/maps/search/?api=1&amp;query=Finca+Los+Olivos+Valencia"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Abrir en Google Maps
-          </a>
-        </div>
-      </div>
-    </section>
+<section class="block" id="mapa" aria-labelledby="mapa-title">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title" id="mapa-title" data-eyebrow="Ubicación">Cómo llegar</h2>
+    <p class="section-sub">Te esperamos en dos lugares especiales para celebrar este día tan importante.</p>
 
+    <div class="map-grid">
+
+      <!-- Iglesia -->
+      <div class="map-card">
+        <span class="pin" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/>
+            <circle cx="12" cy="10" r="2.5"/>
+          </svg>
+        </span>
+
+        <p class="place">Iglesia [Nombre de la iglesia]</p>
+        <p class="addr">
+          [Calle y número]<br />
+          [Ciudad, País]
+        </p>
+
+        <a
+          class="btn"
+          href="https://www.google.com/maps/search/?api=1&amp;query=Iglesia+[Nombre]+[Ciudad]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Abrir en Google Maps
+        </a>
+      </div>
+
+
+      <!-- Finca -->
+      <div class="map-card">
+        <span class="pin" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/>
+            <circle cx="12" cy="10" r="2.5"/>
+          </svg>
+        </span>
+
+        <p class="place">Recepcion [Finca Los Olivos]</p>
+        <p class="addr">
+          Camino del Prado 24<br />
+          Valencia, España
+        </p>
+
+        <a
+          class="btn"
+          href="https://www.google.com/maps/search/?api=1&amp;query=Finca+Los+Olivos+Valencia"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Abrir en Google Maps
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
     <!-- RSVP -->
     <section class="block rsvp" id="rsvp" aria-labelledby="rsvp-title">
       <div class="container" data-aos="fade-up">

@@ -949,3 +949,25 @@ footer .footer-date {
     scroll-behavior: auto !important;
   }
 }
+
+.detail-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px; /* separación entre iconos */
+}
+
+.icon-hombre {
+  font-size: 22px;
+  color: #b08d57;
+}
+
+.icon-mujer {
+  font-size: 25px; /* más grande */
+  color: #b08d57;
+}
+
+.icon-ubicacion {
+    font-size: 22px;
+    color: #b08d57;
+  }
