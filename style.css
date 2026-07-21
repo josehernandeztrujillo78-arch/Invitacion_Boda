@@ -971,3 +971,12 @@ footer .footer-date {
     font-size: 22px;
     color: #b08d57;
   }
+
+  .hero-video::-webkit-media-controls {
+    display: none !important;
+}
+
+.hero-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
