@@ -1,343 +1,497 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Invitación a la boda de Ana y Diego. ¡Acompáñanos a celebrar nuestro amor el 12 de septiembre de 2026!" />
-  <meta name="theme-color" content="#6b7255" />
 
-  <title>Karina &amp; Gerardo · Nuestra Boda</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Karina &amp; Gerardo" />
-  <meta property="og:description" content="Nos casamos · 12 de septiembre de 2026" />
-  <meta property="og:image" content="cover.png" />
-  <meta property="og:type" content="website" />
+<title>Karina & Gerardo · Invitación de Boda</title>
 
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap"
-    rel="stylesheet"
-  />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+
+--cream:#f7f2ea;
+--ink:#3a3a34;
+--gold:#b08d57;
+--rose:#b76e79;
+
+--serif:"Cormorant Garamond",serif;
+--sans:"Jost",sans-serif;
+
+}
+
+
+*,
+*::before,
+*::after{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+
+body{
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+font-family:var(--sans);
+
+background:
+linear-gradient(
+rgba(247,242,234,.75),
+rgba(239,230,216,.85)
+),
+url("img/portad2.webp");
+
+background-size:cover;
+background-position:center;
+
+position:relative;
+
+}
+
+
+/* Luz ambiental */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+height:600px;
+
+background:
+radial-gradient(
+circle,
+rgba(176,141,87,.30),
+transparent 70%
+);
+
+animation:luz 10s infinite alternate;
+
+}
+
+
+@keyframes luz{
+
+from{
+transform:translate(-120px,-80px);
+}
+
+to{
+transform:translate(120px,100px);
+}
+
+}
+
+
+
+/* Partículas */
+
+.particula{
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+background:var(--gold);
+
+transform:rotate(-45deg);
+
+opacity:.5;
+
+animation:flotar 7s linear infinite;
+
+}
+
+
+.particula::before,
+.particula::after{
+
+content:"";
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+background:var(--gold);
+
+border-radius:50%;
+
+}
+
+
+.particula::before{
+
+top:-5px;
+left:0;
+
+}
+
+
+.particula::after{
+
+left:5px;
+top:0;
+
+}
+
+
+
+@keyframes flotar{
+
+from{
+
+transform:
+translateY(100vh)
+rotate(-45deg);
+
+opacity:.6;
+
+}
+
+
+to{
+
+transform:
+translateY(-20vh)
+rotate(-45deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+/* Sobre principal */
+
+.sobre{
+
+width:100%;
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+}
+
+
+/* Tarjeta */
+
+.contenido{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+background:rgba(255,253,249,.80);
+
+padding:55px 45px;
+
+border-radius:25px;
+
+box-shadow:
+0 20px 45px rgba(58,45,20,.18);
+
+animation:aparecer 1.5s ease;
+
+}
+
+
+
+/* Corazón */
+
+.corazon{
+
+font-size:55px;
+
+color:var(--rose);
+
+margin-bottom:15px;
+
+
+}
+
+
+
+/* Nombres */
+
+.titulo{
+
+font-family:var(--serif);
+
+font-size:65px;
+
+font-weight:400;
+
+line-height:.95;
+
+letter-spacing:3px;
+
+color:#b08d57;
+
+margin-bottom:25px;
+
+}
+
+
+
+/* Texto */
+
+.texto{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#665555;
+
+margin-bottom:35px;
+
+}
+
+
+
+/* Botón */
+
+.boton{
+
+display:inline-block;
+
+padding:15px 40px;
+
+background:var(--rose);
+
+color:white;
+
+text-decoration:none;
+
+border-radius:50px;
+
+letter-spacing:2px;
+
+font-size:15px;
+
+transition:.3s;
+
+box-shadow:
+0 8px 20px rgba(183,110,121,.35);
+
+}
+
+
+.boton:hover{
+
+background:#565c44;;
+
+transform:translateY(-3px);
+
+}
+
+
+
+/* Sello */
+
+.sello{
+
+position:absolute;
+
+right:40px;
+bottom:30px;
+
+width:70px;
+height:70px;
+
+background:var(--rose);
+
+color:white;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:35px;
+
+z-index:2;
+
+}
+
+
+/* Entrada */
+
+@keyframes aparecer{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/* Celular */
+
+@media(max-width:600px){
+
+.contenido{
+
+padding:35px 25px;
+
+margin:20px;
+
+}
+
+
+.titulo{
+
+font-size:42px;
+
+}
+
+
+.texto{
+
+font-size:17px;
+
+}
+
+
+.sello{
+
+width:55px;
+height:55px;
+
+font-size:25px;
+
+right:20px;
+bottom:20px;
+
+}
+
+}
+
+
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation:none!important;
+
+transition:none!important;
+
+}
+
+}
+
+
+</style>
+
 </head>
 
+
 <body>
-  <!-- Salto al contenido (accesibilidad) -->
-  <a class="skip-link" href="#historia">Saltar al contenido</a>
 
-  <!-- Decoración floral -->
-  <img class="flower flower1" src="img/flores.png" alt="" aria-hidden="true" />
-  <img class="flower flower2" src="img/flores.png" alt="" aria-hidden="true" />
 
-  <!-- Música -->
-  <button class="music-toggle" id="musicBtn" aria-label="Reproducir música de fondo" aria-pressed="false" title="Música">
-    <svg class="muted-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M9 18V5l12-2v13" />
-      <circle cx="6" cy="18" r="3" />
-      <circle cx="18" cy="16" r="3" />
-    </svg>
-    <span class="bars" aria-hidden="true">
-      <span></span><span></span><span></span><span></span>
-    </span>
-  </button>
+<div class="particula" style="left:10%;animation-delay:1s"></div>
+<div class="particula" style="left:30%;animation-delay:4s"></div>
+<div class="particula" style="left:70%;animation-delay:2s"></div>
+<div class="particula" style="left:85%;animation-delay:6s"></div>
 
-  <audio id="bgMusic" loop>
-  <source src="Lana Del Rey - Cinnamon Girl (Lyrics).mp3" type="audio/mpeg">
-</audio>
 
-  <!-- HERO -->
-  <header class="hero">
-    <video class="hero-video" autoplay muted loop playsinline poster="img/cover.png">
-      <source src="video.mp4" type="video/mp4" />
-    </video>
 
-    <div class="hero-overlay" aria-hidden="true"></div>
+<section class="sobre">
 
-    <div class="hero-content" data-aos="fade-up">
-      <p class="eyebrow">Nos casamos</p>
-      <h1 class="names">Karina <span class="amp">&amp;</span> Gerardo</h1>
-      <div class="divider" aria-hidden="true"></div>
-      <p class="date">Sábado · 12 de Septiembre · 2026</p>
-    </div>
 
-    <a class="scroll-hint" href="#historia" aria-label="Desliza para ver más">
-      <span>Desliza</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 5v14M19 12l-7 7-7-7" />
-      </svg>
-    </a>
-  </header>
+<div class="contenido">
 
-  <main>
-    <!-- Historia -->
-    <section class="block story" id="historia" aria-labelledby="historia-title">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title" id="historia-title" data-eyebrow="karina &amp; Gerardo">Nuestra Historia</h2>
-        <p class="section-sub">
-          Todo comenzó con una casualidad que terminó convirtiéndose en el amor de nuestras vidas.
-          Gracias por acompañarnos a escribir este nuevo capítulo.
-        </p>
-      </div>
-    </section>
 
-    <!-- Galería -->
-    <section class="block" id="galeria" aria-labelledby="galeria-title">
-      <div class="container">
-        <h2 class="section-title" id="galeria-title" data-aos="fade-up" data-eyebrow="Momentos">Galería</h2>
-        <div class="gallery">
-          <img src="img/1.png" alt="Ana y Diego paseando juntos" loading="lazy" data-aos="zoom-in" />
-          <img src="img/2.png" alt="Ana y Diego riendo" loading="lazy" data-aos="zoom-in" data-aos-delay="50" />
-          <img src="img/3.png" alt="Ana y Diego de la mano" loading="lazy" data-aos="zoom-in" data-aos-delay="100" />
-          <img src="img/4.png" alt="Ana y Diego al atardecer" loading="lazy" data-aos="zoom-in" data-aos-delay="150" />
-          <img src="img/5.png" alt="Ana y Diego abrazados" loading="lazy" data-aos="zoom-in" data-aos-delay="200" />
-          <img src="img/6.png" alt="Ana y Diego celebrando" loading="lazy" data-aos="zoom-in" data-aos-delay="250" />
-        </div>
-      </div>
-    </section>
+<div class="corazon">♡</div>
 
-    <!-- Cuenta regresiva -->
-    <section class="block countdown-wrap" id="cuenta" aria-labelledby="cuenta-title">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title" id="cuenta-title" data-eyebrow="12 · 09 · 2026">Cuenta regresiva</h2>
-        <p class="section-sub">El gran día se acerca. ¡Prepárate para celebrar con nosotros!</p>
 
-        <div class="countdown" role="timer" aria-label="Cuenta regresiva para la boda">
-          <div class="count-box"><span class="num" id="days">--</span><span class="lbl">Días</span></div>
-          <div class="count-box"><span class="num" id="hours">--</span><span class="lbl">Horas</span></div>
-          <div class="count-box"><span class="num" id="minutes">--</span><span class="lbl">Minutos</span></div>
-          <div class="count-box"><span class="num" id="seconds">--</span><span class="lbl">Segundos</span></div>
-        </div>
-      </div>
-    </section>
+<h1 class="titulo">
 
-    <!-- Cronología -->
-    <section class="block" id="cronologia" aria-labelledby="cronologia-title">
-      <div class="container">
-        <h2 class="section-title" id="cronologia-title" data-aos="fade-up" data-eyebrow="El gran día">Cronología de la fiesta</h2>
-        <p class="section-sub" data-aos="fade-up">Así viviremos juntos este día tan especial.</p>
+Karina
+<br>
+&
+<br>
+Gerardo
 
-        <ol class="timeline">
-          <li class="t-item" data-aos="fade-up">
-            <span class="t-dot" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 5h6M6 22V11l6-4 6 4v11M9 22v-5h6v5"/></svg>
-            </span>
-            <span class="t-time">16:00 h</span>
-            <h3 class="t-title">Ceremonia</h3>
-            <p class="t-desc">Nos daremos el “sí, quiero” en la Iglesia de San Miguel.</p>
-          </li>
-          <li class="t-item" data-aos="fade-up">
-            <span class="t-dot" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8M12 15v7M6 3h12l-1 6a5 5 0 0 1-10 0z"/></svg>
-            </span>
-            <span class="t-time">17:30 h</span>
-            <h3 class="t-title">Cóctel de bienvenida</h3>
-            <p class="t-desc">Brindis, aperitivos y música suave en el jardín.</p>
-          </li>
-          <li class="t-item" data-aos="fade-up">
-            <span class="t-dot" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M12 11v10M7 11a5 5 0 0 1 10 0"/></svg>
-            </span>
-            <span class="t-time">19:00 h</span>
-            <h3 class="t-title">Banquete</h3>
-            <p class="t-desc">Cena para compartir historias y celebrar juntos.</p>
-          </li>
-          <li class="t-item" data-aos="fade-up">
-            <span class="t-dot" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-            </span>
-            <span class="t-time">21:30 h</span>
-            <h3 class="t-title">Primer baile &amp; fiesta</h3>
-            <p class="t-desc">Abrimos la pista de baile. ¡A disfrutar hasta el amanecer!</p>
-          </li>
-          <li class="t-item" data-aos="fade-up">
-            <span class="t-dot" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg>
-            </span>
-            <span class="t-time">00:30 h</span>
-            <h3 class="t-title">Recena &amp; despedida</h3>
-            <p class="t-desc">Un último brindis y fuegos artificiales para cerrar la noche.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
+</h1>
 
-    <!-- Mesa de regalos -->
-    <section class="block" id="regalos" aria-labelledby="regalos-title">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title" id="regalos-title" data-eyebrow="Con cariño">Mesa de Regalos</h2>
-        <p class="section-sub">
-          Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle con nosotros puedes hacerlo aquí.
-        </p>
-        <button class="btn" type="button" id="giftToggle" aria-expanded="false" aria-controls="giftList">
-          Ver Mesa de Regalos
-        </button>
 
-        <ul class="gift-list" id="giftList" hidden>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-            <span>Juego de sartenes y ollas</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5M4 9v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9M9 13h6"/></svg>
-            <span>Vajilla completa para 12</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v6a6 6 0 0 0 12 0V2M6 2h12M8 22h8M12 14v8"/></svg>
-            <span>Set de copas de cristal</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3zM3 7l3-4h12l3 4M12 11v5M9 13h6"/></svg>
-            <span>Juego de sábanas y edredón</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-8-4.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-8 11-8 11z"/></svg>
-            <span>Aporte para nuestra luna de miel</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v6H4zM4 14h16v6H4zM8 7h.01M8 17h.01"/></svg>
-            <span>Cafetera y electrodomésticos</span>
-          </li>
-        </ul>
+<p class="texto">
 
-        <div class="detail-card bank-card">
-          <h3>Cuenta Bancaria</h3>
-          <p>Banco BBVA</p>
-          <p class="clabe">
-            CLABE: <span id="clabe">012345678901234567</span>
-            <button class="copy-btn" type="button" data-copy="012345678901234567" aria-label="Copiar CLABE">Copiar</button>
-          </p>
-        </div>
-      </div>
-    </section>
+Tenemos el honor de invitarte<br>
+a celebrar juntos<br>
+el comienzo de nuestra historia de amor
 
-    <!-- Detalles -->
-    <section class="block details" id="detalles" aria-labelledby="detalles-title">
-      <div class="container">
-        <h2 class="section-title" id="detalles-title" data-aos="fade-up" data-eyebrow="Información">Detalles</h2>
-        <p class="section-sub" data-aos="fade-up">Toda la información para que no te pierdas nada.</p>
+</p>
 
-        <div class="detail-grid">
-          <div class="detail-card" data-aos="fade-up">
-            <h3>Ubicación</h3>
-            <p>Finca Los Olivos<br />Camino del Prado 24<br />Valencia, España</p>
-          </div>
 
-          <div class="detail-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Etiqueta</h3>
-            <p>Formal / Elegante<br />Se recomienda calzado cómodo para bailar</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<a href="bienvenida.html" class="boton">
 
-    <!-- Mapa -->
-    <section class="block" id="mapa" aria-labelledby="mapa-title">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title" id="mapa-title" data-eyebrow="Ubicación">Cómo llegar</h2>
-        <p class="section-sub">Te esperamos en un rincón rodeado de olivos, ideal para celebrar.</p>
-        <div class="map-card">
-          <span class="pin" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          </span>
-          <p class="place">Finca Los Olivos</p>
-          <p class="addr">Camino del Prado 24<br />Valencia, España</p>
-          <a
-            class="btn"
-            href="https://www.google.com/maps/search/?api=1&amp;query=Finca+Los+Olivos+Valencia"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Abrir en Google Maps
-          </a>
-        </div>
-      </div>
-    </section>
+ABRIR INVITACIÓN
 
-    <!-- RSVP -->
-    <section class="block rsvp" id="rsvp" aria-labelledby="rsvp-title">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title" id="rsvp-title" data-eyebrow="Te esperamos">Confirma tu asistencia</h2>
-        <p class="section-sub">Nos encantaría contar contigo. Por favor, confírmanos antes del 1 de agosto de 2026.</p>
+</a>
 
-        <form class="rsvp-form" id="rsvpForm" novalidate>
-          <div class="field">
-            <label for="name">Nombre completo</label>
-            <input type="text" id="name" name="name" autocomplete="name" required />
-          </div>
 
-          <div class="field">
-            <label for="guests">Número de invitados</label>
-            <select id="guests" name="guests" required>
-              <option value="1">1 persona</option>
-              <option value="2">2 personas</option>
-              <option value="3">3 personas</option>
-              <option value="4">4 personas</option>
-            </select>
-          </div>
+</div>
 
-          <div class="field field--full">
-            <label for="message">Mensaje para los novios (opcional)</label>
-            <textarea id="message" name="message" rows="3"></textarea>
-          </div>
 
-          <p class="rsvp-note">Envía tu confirmación por WhatsApp a la familia que corresponda:</p>
+<div class="sello">
 
-          <div class="rsvp-actions">
-            <button
-              class="btn btn--wa"
-              type="submit"
-              data-wa="5215512345678"
-              data-family="Familia de la Novia"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.66-.61-2.92-1.26-4.83-4.2-4.98-4.4-.15-.2-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.58.75 1.85.89.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
-              Familia de la Novia
-            </button>
+♥
 
-            <button
-              class="btn btn--wa"
-              type="submit"
-              data-wa="5215598765432"
-              data-family="Familia del Novio"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.66-.61-2.92-1.26-4.83-4.2-4.98-4.4-.15-.2-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.58.75 1.85.89.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
-              Familia del Novio
-            </button>
-          </div>
+</div>
 
-          <p class="rsvp-feedback" id="rsvpFeedback" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-  </main>
 
-  <!-- Audio -->
-  <audio id="music" loop preload="none">
-    <source src="music.mp3" type="audio/mpeg" />
-  </audio>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="names-sm">Karina &amp; Gerardo</div>
-    <p>Gracias por ser parte de nuestra historia <span class="heart" aria-hidden="true">♥</span></p>
-    <p class="footer-date">12 · 09 · 2026</p>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="script.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      if (window.AOS) {
-        AOS.init({ duration: 900, once: true, offset: 80 });
-      }
-    });
-  </script>
 </body>
+
 </html>
